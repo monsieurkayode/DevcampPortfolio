@@ -32,7 +32,7 @@ class PortfoliosController < ApplicationController
   def destroy
     return unless @portfolio_item.destroy
 
-    redirect_to @portfolio_items, notice: 'Portfolio item deleted!'
+    redirect_to portfolios_path, notice: 'Portfolio item deleted!'
   end
 
   private
