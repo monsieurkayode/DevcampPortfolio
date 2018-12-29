@@ -1,4 +1,4 @@
-<%= form_for(portfolio_item) do |f| %>
+<%= form_with(model: portfolio_item, local: true) do |f| %>
   <% if portfolio_item.errors.any? %>
     <div>
       <h2><%= pluralize(portfolio_item.errors.count, "error") %>  prevented portfolio from being saved</h2>
@@ -22,5 +22,5 @@
     </div>
     <br>
   <% end %>
-  <%= f.submit 'Create Portfolio' %>
+  <%= f.submit %>
 <% end %>

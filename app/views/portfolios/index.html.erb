@@ -4,13 +4,15 @@
   <p><%= notice %></p>
 
   <%= link_to 'Create new Portfolio', new_portfolio_path(@portfolio) %>
+  
   <% @portfolio_items.each do |portfolio_item| %>
     <h2><%= portfolio_item.title %></h2>
-    <a href="<%= portfolio_url(portfolio_item) %>">
+    <a href="<%= portfolio_path(portfolio_item) %>">
       <%= image_tag portfolio_item.thumb_image %>
     </a>
     <h3><%= portfolio_item.subtitle %></h3>
     <p><%= portfolio_item.body %></p>
+    <%= link_to 'Edit', edit_portfolio_path(portfolio_item) %>
   <% end %>
 
   <%= link_to 'Create new Portfolio', new_portfolio_path(@portfolio) %>

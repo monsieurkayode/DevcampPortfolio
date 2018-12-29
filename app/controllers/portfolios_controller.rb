@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: %i[edit show update destroy]
   def index
-    @portfolio_items = Portfolio.all
+    @portfolio_items = Portfolio.all.order(id: :desc)
   end
 
   def new
@@ -22,17 +22,17 @@ class PortfoliosController < ApplicationController
   def show; end
 
   def update
-    if @portfolio_item.update(portfolio__item_params)
-      redirect_to @portfolioitem, notice: 'Portfolio item updated!'
+    if @portfolio_item.update(portfolio_item_params)
+      redirect_to @portfolio_item, notice: 'Portfolio item updated!'
     else
       render(:edit)
     end
   end
 
   def destroy
-    if @portfolio_item.destroy 
-      redirect_to @portfolio_items, notice: 'Portfolio item deleted!'
-    end
+    return unless @portfolio_item.destroy
+
+    redirect_to @portfolio_items, notice: 'Portfolio item deleted!'
   end
 
   private
