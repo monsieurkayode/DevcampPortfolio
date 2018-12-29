@@ -1,4 +1,5 @@
 class PortfoliosController < ApplicationController
+  before_action :set_portfolio_item, only: %i[edit show update destroy]
   def index
     @portfolio_items = Portfolio.all
   end
@@ -42,7 +43,7 @@ class PortfoliosController < ApplicationController
 
   def portfolio_item_params
     params
-      .require(:portfolio_item)
-      .permit(:title, :subtitle, :main_image, :thumb_image)
+      .require(:portfolio)
+      .permit(:title, :subtitle, :body, :main_image, :thumb_image)
   end
 end

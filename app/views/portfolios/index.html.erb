@@ -1,10 +1,17 @@
-<h1>Portfolio Items</h1>
+<div style="max-width: 700px; margin: 0 auto; text-align: center">
+  <h1>Portfolio Items</h1>
 
-<% @portfolio_items.each do |portfolio_item| %>
-  <h2><%= portfolio_item.title %></h2>
-  <a href="<%= portfolio_url(portfolio_item) %>">
-    <%= image_tag portfolio_item.thumb_image %>
-  </a>
-  <h3><%= portfolio_item.subtitle %></h3>
-  <p><%= portfolio_item.body %></p>
-<% end %>
+  <p><%= notice %></p>
+
+  <%= link_to 'Create new Portfolio', new_portfolio_path(@portfolio) %>
+  <% @portfolio_items.each do |portfolio_item| %>
+    <h2><%= portfolio_item.title %></h2>
+    <a href="<%= portfolio_url(portfolio_item) %>">
+      <%= image_tag portfolio_item.thumb_image %>
+    </a>
+    <h3><%= portfolio_item.subtitle %></h3>
+    <p><%= portfolio_item.body %></p>
+  <% end %>
+
+  <%= link_to 'Create new Portfolio', new_portfolio_path(@portfolio) %>
+</div>
