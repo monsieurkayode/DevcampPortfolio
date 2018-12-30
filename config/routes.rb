@@ -15,5 +15,5 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  match '/(*url)', to: 'application#not_found', via: :all
+  match '/*path', to: 'application#not_found', via: :all
 end

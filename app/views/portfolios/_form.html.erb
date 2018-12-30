@@ -10,7 +10,7 @@
     </div>
   <% end %>
 
-  <% portfolio_item.attributes.reject { |k, _| k == "id" || /ated_at/ =~ k }.each do |key, _| %>
+  <% portfolio_item.attributes.reject { |k, _| /(ated_at|slug|^id$)/ =~ k }.each do |key, _| %>
     <div>
       <%= f.label key %>
       <br>
