@@ -1,10 +1,7 @@
 class Portfolio < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
-  validates :title, presence: true, length: { minimum: 3, maximum: 100 }
-  validates_presence_of :subtitle
-  validates_presence_of :thumb_image
-  validates_presence_of :main_image
-  validates_presence_of :body
+  validates :title, length: { minimum: 3, maximum: 100 }
+  validates_presence_of :title, :subtitle, :main_image, :thumb_image, :body
   default_scope { friendly }
 end
