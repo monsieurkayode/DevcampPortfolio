@@ -1,0 +1,17 @@
+<h1 style="text-align: center; text-decoration: underline"><%= @portfolio_item.title %></h1>
+ <p style="text-align: center;"><%= notice %></p>
+
+<figure style="text-align: center; text-decoration: underline">
+  <%= image_tag @portfolio_item.main_image %><br>
+  <caption><%= @portfolio_item.subtitle %></caption>
+</figure>
+
+<article style="margin: 60px auto; max-width: 700px">
+  <p><%= @portfolio_item.body %></p>
+</article>
+
+<p style="text-align: center;">
+  <%= link_to 'Back', portfolios_path %> |
+  <%= link_to 'Edit', edit_portfolio_path(@portfolio_item) %> |
+  <%= link_to 'Delete', @portfolio_item, method: :delete, data: { confirm: 'Delete portfolio item?'} %>
+</p>
