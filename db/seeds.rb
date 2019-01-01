@@ -1,5 +1,11 @@
 puts 'Seeding database....'
 
+3.times do |topic|
+  Topic.create!(title: "Topic #{topic + 1}")
+end
+
+puts '3 Topics created!'
+
 10.times do |blog|
   Blog.create!(
     title: "My Blog Post #{blog + 1}",
@@ -15,7 +21,8 @@ puts 'Seeding database....'
       corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? 
       Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam 
       nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas 
-      nulla pariatur?'
+      nulla pariatur?',
+    topic_id: rand(1..Topic.count)
   )
 end
 
@@ -30,10 +37,10 @@ end
 
 puts '5 skills created!'
 
-9.times do |portfolio_item|
+8.times do |portfolio_item|
   Portfolio.create!(
     title: "My Portfolio Title #{portfolio_item + 1}",
-    subtitle: 'My great service',
+    subtitle: 'Ruby on Rails',
     body: "Lorem ipsum dolor sit amet ut perspiciatis unde omnis iste natus
       accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab 
       illo inventore veritatis et quasi architecto beatae vitae dicta sunt 
@@ -42,6 +49,17 @@ puts '5 skills created!'
     thumb_image: 'https://via.placeholder.com/350x200',
   )
 end
+
+Portfolio.create!(
+  title: "My Portfolio Title #{Portfolio.count + 1}",
+  subtitle: 'Angular',
+  body: "Lorem ipsum dolor sit amet ut perspiciatis unde omnis iste natus
+    accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab 
+    illo inventore veritatis et quasi architecto beatae vitae dicta sunt 
+    explicabo.",
+  main_image: 'https://via.placeholder.com/600x400',
+  thumb_image: 'https://via.placeholder.com/350x200',
+)
 
 puts '9 portfolios created!'
 puts 'Database seeding complete'

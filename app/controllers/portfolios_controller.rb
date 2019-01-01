@@ -4,6 +4,10 @@ class PortfoliosController < ApplicationController
     @portfolio_items = Portfolio.all.order(id: :desc)
   end
 
+  def angular
+    @angular_portfolio_items = Portfolio.angular.order(id: :desc)
+  end
+
   def new
     @portfolio_item = Portfolio.new
   end
