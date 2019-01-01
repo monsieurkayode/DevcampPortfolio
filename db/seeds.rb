@@ -62,4 +62,12 @@ Portfolio.create!(
 )
 
 puts '9 portfolios created!'
+
+3.times do |technology|
+  Portfolio.find(rand(1..Portfolio.count)).technologies.create!(
+    name: "Technology #{technology + 1}"
+  )
+end
+
+puts '3 technologies created!'
 puts 'Database seeding complete'
