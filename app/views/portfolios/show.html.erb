@@ -1,4 +1,9 @@
 <h1 style="text-align: center; text-decoration: underline"><%= @portfolio_item.title %></h1>
+<div style="display: flex; justify-content: center">
+  <% @portfolio_item.technologies.each do |technology| %>
+    <p style="padding: 0 2%"><strong>&plus;</strong>&nbsp;<%= technology.name %></p>
+  <% end %>
+</div>
  <p style="text-align: center;"><%= notice %></p>
 
 <figure style="text-align: center; text-decoration: underline">
