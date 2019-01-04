@@ -22,5 +22,13 @@
     </div>
     <br>
   <% end %>
+  <ul>
+    <%= f.fields_for(:technologies) do |technology_fields| %>
+      <li>
+        <%= technology_fields.label :name %>
+        <%= technology_fields.text_field :name %>
+      </li>
+    <% end %>
+  </ul>
   <%= f.submit %>
 <% end %>
