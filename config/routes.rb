@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users, path: '', path_names: { sign_in: 'login', sign_up: 'register', sign_out: 'logout' }
+  devise_for :users,
+             path: '',
+             path_names: {
+               sign_in: 'login',
+               sign_up: 'register',
+               sign_out: 'logout'
+             }
+
   resources :portfolios, except: %i[show edit update destroy]
   get 'angular-portfolios', to: 'portfolios#angular'
   get '/portfolio/:id/edit', to: 'portfolios#edit', as: 'edit_portfolio'
