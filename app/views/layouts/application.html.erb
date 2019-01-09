@@ -13,7 +13,7 @@
     <%= console %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <% if current_user %>
+    <% if current_user.is_a?(User) %>
       <%= link_to 'Logout', destroy_user_session_path, method: :delete %> |
       <%= link_to 'Update Account', edit_user_registration_path %>
     <% elsif  request.fullpath == root_path %>
@@ -22,5 +22,10 @@
     <% end %>
 
     <%= yield %>
+
+    <% if session[:source] %>
+      <p style="text-align: center">Thanks for visiting me from <%= session[:source] %></p>
+    <% end %>
+
   </body>
 </html>
