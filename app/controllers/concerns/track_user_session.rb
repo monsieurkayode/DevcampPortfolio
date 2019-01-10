@@ -1,19 +1,19 @@
-# TODO
-# Debug to find out why current_user is nil
 module TrackUserSession
   extend ActiveSupport::Concern
 
   included do
-    before_action :set_user_session, if: :devise_sign_up?
+    after_action :set_user_session, if: :devise_sign_up? && :create_or_update?
   end
 
   def devise_sign_up?
-    params[:controller] == 'devise/registrations' && (
-      %w[create update].include?(params[:action])
-    )
+    params[:controller] == 'devise/registrations'
+  end
+
+  def create_or_update?
+    %w[create update].include?(params[:action])
   end
 
   def set_user_session
-    user_session[:current_user] ||= current_user
+    user_session[:current_user] = current_user
   end
 end
