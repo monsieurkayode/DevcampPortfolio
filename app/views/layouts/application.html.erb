@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= @page_content %></title>
+    <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name="keywords" content="<%= @set_keywords %>" >
+    <meta name="keywords" content="<%= @seo_keywords %>" >
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -14,6 +14,15 @@
     <%= console %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <div>
+      <div><%= link_to 'Home', root_path %></div>
+      <div><%= link_to 'About', about_path %></div>
+      <div><%= link_to 'Contact', contact_path %></div>
+      <div><%= link_to 'Blog', blogs_path %></div>
+      <div><%= link_to 'Portfolio', portfolios_path %></div>
+    </div>
+
     <% if current_user.is_a?(User) %>
       <%= link_to 'Logout', destroy_user_session_path, method: :delete %> |
       <%= link_to 'Update Account', edit_user_registration_path %>
