@@ -6,14 +6,14 @@ module PageDefaultsConcern
   end
 
   def set_page_defaults
-    page_subtitle = pages_controller? ? params[:action].titleize : params[:controller].split('/').last.titleize
+    page_subtitle = if pages_controller?
+                      params[:action].titleize
+                    else
+                      params[:controller].split('/').last.titleize
+                    end
+
     @page_title = "Devcamp Portfolio | #{page_subtitle}"
     @seo_keywords = 'Devcamp Portfolio'
-    @asset_filename = asset_filename_from_controller
-  end
-
-  def asset_filename_from_controller
-    pages_controller? ? 'application' : params[:controller]
   end
 
   def pages_controller?

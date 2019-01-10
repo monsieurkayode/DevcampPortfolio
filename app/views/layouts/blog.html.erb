@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <%= render 'shared/head', asset_filename: @asset_filename %>
+  <%= render 'shared/head', asset_filename: 'blogs' %>
 
   <body>
     <%= console %>
     <%= render 'shared/notification' %>
-    <%= render 'shared/user_actions' %>
+    <%= user_actions %>
 
     <%= yield %>
 
     <%= render 'shared/nav', location: 'bottom' %>
-    <%= render 'shared/tracker' %>
+    <%= tracker %>
   </body>
 </html>
