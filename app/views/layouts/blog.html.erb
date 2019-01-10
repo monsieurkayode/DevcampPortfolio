@@ -5,11 +5,11 @@
   <body>
     <%= console %>
     <%= render 'shared/notification' %>
-    <%= render 'shared/nav', location: 'top' %>
     <%= render 'shared/user_actions' %>
 
     <%= yield %>
 
+    <%= render 'shared/nav', location: 'bottom' %>
     <%= render 'shared/tracker' %>
   </body>
 </html>

@@ -1,0 +1,9 @@
+<head>
+  <title><%= @page_title %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta name="keywords" content="<%= @seo_keywords %>" >
+
+  <%= stylesheet_link_tag    asset_filename, media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag asset_filename, 'data-turbolinks-track': 'reload' %>
+</head>

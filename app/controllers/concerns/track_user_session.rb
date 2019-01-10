@@ -14,6 +14,6 @@ module TrackUserSession
   end
 
   def set_user_session
-    user_session[:current_user] = current_user
+    user_session[:current_user] = current_user if current_user.is_a?(User)
   end
 end
