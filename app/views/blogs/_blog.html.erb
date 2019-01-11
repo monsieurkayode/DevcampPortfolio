@@ -1,0 +1,8 @@
+<tr>
+  <td><%= blog.title %></td>
+  <td><%= blog.body %></td>
+  <td><button><%= link_to blog.status.titleize, toggle_status_blog_path(blog), method: :patch %></button></td>
+  <td><button><%= link_to 'Show', blog %></button></td>
+  <td><button><%= link_to 'Edit', edit_blog_path(blog) %></button></td>
+  <td><button><%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+</tr>
