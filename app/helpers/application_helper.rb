@@ -20,4 +20,8 @@ module ApplicationHelper
 
     tag.p notification, class: notification_type
   end
+
+  def copyright_generator
+    ZenViewTool::Renderer.copyright 'Kayode Adeola', 'All rights reserved.'
+  end
 end
