@@ -14,4 +14,10 @@ module ApplicationHelper
 
     tag.p "Thanks for visiting me from #{session[:source]}"
   end
+
+  def show_notification(notification, notification_type)
+    return unless notification
+
+    tag.p notification, class: notification_type
+  end
 end
