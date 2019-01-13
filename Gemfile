@@ -42,7 +42,7 @@ gem 'friendly_id', '~> 5.2.4'
 # Use devise for auhtentication
 gem 'devise', '~> 4.5'
 
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '>= 4.1.2'
 gem 'jquery-rails'
 
 gem 'zen_view_tool', '~> 0.1.0'
