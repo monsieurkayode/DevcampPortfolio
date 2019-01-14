@@ -41,6 +41,8 @@ gem 'friendly_id', '~> 5.2.4'
 
 # Use devise for auhtentication
 gem 'devise', '~> 4.5'
+# Use petergate for authorization
+gem 'petergate', '~> 2.0', '>= 2.0.1'
 
 gem 'bootstrap', '>= 4.1.2'
 gem 'jquery-rails'
