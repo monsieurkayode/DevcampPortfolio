@@ -1,5 +1,8 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: %i[show edit update destroy toggle_status]
+  access all: %i[show index],
+         user: { except: [:destroy, :new, :create, :edit, :update, :toggle_status] },
+         site_admin: :all
   layout 'blog'
 
   # GET /blogs

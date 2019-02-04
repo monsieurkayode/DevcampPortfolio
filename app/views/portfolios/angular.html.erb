@@ -3,7 +3,7 @@
 
   <p><%= notice %></p>
 
-  <%= link_to 'Create new Portfolio', new_portfolio_path(@portfolio) %>
+  <%= link_to 'Create new Portfolio', new_portfolio_path(@portfolio) if logged_in? :site_admin %>
   
   <% @angular_portfolio_items.each do |portfolio_item| %>
     <h2><%= portfolio_item.title %></h2>
@@ -12,9 +12,11 @@
     </a>
     <h3><%= portfolio_item.subtitle %></h3>
     <p><%= portfolio_item.body %></p>
-    <%= link_to 'Edit', edit_portfolio_path(portfolio_item) %> |
-    <%= link_to 'Delete', portfolio_item, method: :delete, data: { confirm: 'Delete portfolio item?'} %>
+    <% if logged_in? :site_admin %>
+      <%= link_to 'Edit', edit_portfolio_path(portfolio_item) %> |
+      <%= link_to 'Delete', portfolio_item, method: :delete, data: { confirm: 'Delete portfolio item?'} %>
+    <% end %>
   <% end %>
   <br><br>
-  <%= link_to 'Create new Portfolio', new_portfolio_path(@portfolio) %>
+  <%= link_to 'Create new Portfolio', new_portfolio_path(@portfolio) if logged_in? :site_admin %>
 </div>

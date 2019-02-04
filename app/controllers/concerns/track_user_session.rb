@@ -15,5 +15,7 @@ module TrackUserSession
 
   def set_user_session
     user_session[:current_user] = current_user if current_user.is_a?(User)
+  rescue Warden::NotAuthenticated => e
+    puts "Error occured: #{e}"
   end
 end
