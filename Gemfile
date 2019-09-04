@@ -40,11 +40,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'friendly_id', '~> 5.2.4'
 
 # Use devise for auhtentication
-gem 'devise', '~> 4.5'
+gem 'devise', '>= 4.6.0'
 # Use petergate for authorization
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 
-gem 'bootstrap', '>= 4.1.2'
+gem 'bootstrap', '>= 4.3.1'
 gem 'jquery-rails'
 
 gem 'zen_view_tool', '~> 0.1.0'
