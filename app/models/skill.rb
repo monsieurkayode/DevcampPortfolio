@@ -1,5 +1,7 @@
 class Skill < ApplicationRecord
   include Placeholder
+  has_many :technologies
+  
   validates_presence_of :title, :percent_utilized
 
   after_initialize :set_defaults
